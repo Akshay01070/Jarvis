@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JARVIS Core Interface - Processing State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ec9f13", // Amber/Gold for "Thinking" state per description
+              secondary: "#135bec", // Blue for standard UI elements
+              "background-light": "#f6f6f8",
+              "background-dark": "#0a0e17", // Very dark
+              "surface-dark": "#111825",
+              "border-dark": "#1f2a40"
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              sans: ["Space Grotesk", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px"
+            },
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display overflow-hidden h-screen flex flex-col">
+<!-- Background Grid Effect -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-20" style="background-image: radial-gradient(#1f2a40 1px, transparent 1px); background-size: 40px 40px;">
+</div>
+<!-- Top Navigation -->
+<header class="relative z-10 flex items-center justify-between px-8 py-4 border-b border-border-dark bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="text-primary animate-pulse">
+<span class="material-symbols-outlined text-3xl">token</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-widest uppercase">JARVIS <span class="text-primary text-xs align-top">OS 12.4.1</span></h2>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide" href="#">Home</a>
+<a class="text-primary text-sm font-medium uppercase tracking-wide" href="#">Commands</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide" href="#">System</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide" href="#">Logs</a>
+</nav>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-primary animate-ping absolute"></div>
+<div class="h-2 w-2 rounded-full bg-primary relative"></div>
+<span class="text-primary text-xs font-mono uppercase tracking-widest">Processing</span>
+<div class="w-10 h-10 rounded-full bg-surface-dark border border-border-dark flex items-center justify-center ml-4">
+<span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="relative z-10 flex-1 flex flex-col md:flex-row items-center justify-center p-6 gap-8 overflow-hidden">
+<!-- Center Core: Visualization -->
+<div class="flex-1 flex flex-col items-center justify-center w-full max-w-2xl relative">
+<!-- Rotating Geometric Core -->
+<div class="relative w-64 h-64 md:w-96 md:h-96 flex items-center justify-center mb-8">
+<!-- Outer Rings -->
+<div class="absolute inset-0 border border-primary/20 rounded-full w-full h-full"></div>
+<div class="absolute inset-4 border border-primary/10 rounded-full w-[90%] h-[90%] m-auto border-dashed"></div>
+<!-- Core Glow -->
+<div class="absolute w-48 h-48 bg-primary/20 blur-[60px] rounded-full"></div>
+<!-- Abstract Geometric Shape (CSS representation) -->
+<div class="relative w-40 h-40 border-2 border-primary rotate-45 flex items-center justify-center bg-primary/5 backdrop-blur-sm shadow-[0_0_30px_rgba(236,159,19,0.3)]">
+<div class="w-28 h-28 border border-primary/50 rotate-45"></div>
+<div class="absolute w-full h-[1px] bg-primary/40 top-1/2 left-0 -translate-y-1/2"></div>
+<div class="absolute h-full w-[1px] bg-primary/40 left-1/2 top-0 -translate-x-1/2"></div>
+</div>
+<!-- Orbiting particles -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full shadow-[0_0_10px_white]"></div>
+<div class="absolute bottom-10 right-10 w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<!-- User Transcript -->
+<div class="text-center space-y-4 max-w-lg z-20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-2">
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+                    LISTENING...
+                </div>
+<h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight drop-shadow-lg">
+                    "Jarvis, what is the current weather?"
+                </h1>
+<div class="flex items-center justify-center gap-4 mt-8">
+<button class="bg-surface-dark hover:bg-red-500/20 hover:border-red-500/50 border border-border-dark text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-all group">
+<span class="material-symbols-outlined text-red-400 group-hover:text-red-500">close</span>
+<span class="text-sm font-medium">Cancel Request</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Holographic Card (Response) -->
+<div class="absolute md:relative bottom-6 right-6 md:bottom-auto md:right-auto md:w-96 w-full max-w-sm">
+<div class="bg-surface-dark/90 backdrop-blur-xl border border-primary/30 rounded-xl p-0 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)] transform transition-all hover:scale-[1.02]">
+<!-- Card Header -->
+<div class="bg-primary/10 px-4 py-3 border-b border-primary/20 flex justify-between items-center">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">cloud</span>
+<span class="text-xs font-bold uppercase tracking-widest">Weather Module</span>
+</div>
+<span class="text-[10px] text-slate-400 font-mono">LIVE_FEED_003</span>
+</div>
+<!-- Card Body -->
+<div class="p-5 relative">
+<!-- Background Map Visual -->
+<div class="absolute inset-0 opacity-20 bg-cover bg-center z-0" data-alt="Abstract dark map grid background" data-location="Vadodara" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcW-l8Gwq16RQ2zgdNqPRj7PDUKHYrJ1XHNVIn2ZjEB39hXsmJVamx-uDk36yU2dynoTO0T6YMq3Cp2hF7-TafeJN6nVzmOG54uxB_BV7nm_ChgRfgrmjQOsi-MXYII6UD3cDb2F1IxXupx6YXNIPEoAXs6DhjlTHre5mQ4qtMz4Y8FxgvPBStvFUsn3ILw5ehYLHyJSnhFln0e3-dmj8mwEnyM1b36E4fGojDtbJ90S9hl-YL8yC_jeoilRC5_RhyaKU6agbwB-kf');"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-2xl font-bold text-white">Vadodara</h3>
+<p class="text-slate-400 text-sm">Gujarat, India</p>
+</div>
+<div class="bg-primary text-black font-bold px-2 py-1 rounded text-xs">
+                                NOW
+                            </div>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-5xl text-primary font-thin">sunny</span>
+<div>
+<span class="text-5xl font-bold text-white tracking-tighter">30°</span>
+<span class="text-xl text-slate-400 font-light">C</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between border-b border-white/5 pb-2">
+<span class="text-slate-400 text-sm">Condition</span>
+<span class="text-white font-medium">Clear Skies</span>
+</div>
+<div class="flex items-center justify-between border-b border-white/5 pb-2">
+<span class="text-slate-400 text-sm">Humidity</span>
+<span class="text-white font-medium">45%</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-slate-400 text-sm">Wind</span>
+<span class="text-white font-medium">12 km/h NW</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Footer Actions -->
+<div class="bg-black/20 p-3 flex gap-2">
+<button class="flex-1 bg-primary text-black text-xs font-bold py-2 rounded hover:bg-primary/90 transition-colors uppercase">
+                        Full Forecast
+                    </button>
+<button class="px-3 py-2 bg-white/5 hover:bg-white/10 rounded text-white transition-colors">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Status Bar -->
+<footer class="relative z-10 px-8 py-4 border-t border-border-dark bg-background-dark/80 backdrop-blur-md flex flex-wrap justify-between items-center gap-4 text-xs font-mono text-slate-500 uppercase">
+<div class="flex gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span>CPU: 32%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">storage</span>
+<span>RAM: 4.5GB</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">network_check</span>
+<span>PING: 12ms</span>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="hover:text-primary cursor-pointer transition-colors">Privacy Protocol</span>
+<span>|</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Diagnostic Tools</span>
+<span>|</span>
+<span>© 2024 Stark Industries</span>
+</div>
+</footer>
+</body></html>
