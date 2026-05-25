@@ -125,15 +125,6 @@ Output: Jarvis speaks answers.
 
 ------------------------------------------------------------------------
 
-# 📂 Recommended Folder Structure
-
-jarvis/ │ ├── frontend/ │ ├── components/ │ │ ├── ChatUI.jsx │ │ └──
-MicListener.jsx │ └── pages/ │ ├── backend/ │ ├── routes/ │ │ └──
-chat.js │ ├── services/ │ │ ├── aiService.js │ │ └── weatherService.js │
-└── server.js
-
-------------------------------------------------------------------------
-
 # 🧠 Conversation Flow
 
 1.  Microphone listens
@@ -145,61 +136,4 @@ chat.js │ ├── services/ │ │ ├── aiService.js │ │ └──
 7.  Convert answer → speech
 8.  Play response
 
-------------------------------------------------------------------------
 
-# 🔥 Example Interaction
-
-User: "Jarvis what's the weather?"
-
-System: Wake word detected ↓ Speech converted to text ↓ Weather API
-called ↓ AI formats response ↓ Jarvis speaks answer
-
-------------------------------------------------------------------------
-
-# 🌐 Deployment
-
-Deploy backend on: - Render - Railway - AWS
-
-Then access Jarvis from: - Laptop - Mobile browser
-
-Anywhere with internet.
-
-------------------------------------------------------------------------
-
-# 📈 Development Phases
-
-## Phase 1 (Current)
-
-✅ Wake word detection\
-✅ Voice assistant\
-✅ Question answering\
-✅ Weather updates\
-✅ Chat conversation
-
-## Phase 2 (Future)
-
--   Music control
--   Messaging
--   Automation tools
-
-------------------------------------------------------------------------
-
-# 🏁 Final Goal of This Phase
-
-Create a **Talking AI Assistant** that:
-
-✔ Wakes when called\
-✔ Understands speech\
-✔ Answers intelligently\
-✔ Talks back naturally
-
-This becomes the foundation for a full Jarvis system later.
-
-------------------------------------------------------------------------
-
-# ✅ Master Prompt (Jarvis Personality)
-
-You are Jarvis, a personal AI assistant. You wake when the user says
-"Jarvis". You speak politely, clearly, and intelligently. Keep responses
-concise and natural. If asked about weather, provide real-time
-information. Engage in friendly conversation when appropriate.
